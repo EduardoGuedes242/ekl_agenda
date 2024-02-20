@@ -1,5 +1,7 @@
 // ignore_for_file: sized_box_for_whitespace, prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
+import 'package:ekl_agenda/config/global.dart';
 import 'package:ekl_agenda/models/empresa.dart';
+import 'package:ekl_agenda/pages/homepage/homepage.dart';
 import 'package:flutter/material.dart';
 
 class SelecionarEmpresasWidget extends StatefulWidget {
@@ -7,7 +9,8 @@ class SelecionarEmpresasWidget extends StatefulWidget {
   SelecionarEmpresasWidget({super.key, required this.empresas});
 
   @override
-  State<SelecionarEmpresasWidget> createState() => _SelecionarEmpresasWidgetState();
+  State<SelecionarEmpresasWidget> createState() =>
+      _SelecionarEmpresasWidgetState();
 }
 
 class _SelecionarEmpresasWidgetState extends State<SelecionarEmpresasWidget> {
@@ -31,11 +34,18 @@ class _SelecionarEmpresasWidgetState extends State<SelecionarEmpresasWidget> {
                 itemCount: widget.empresas.length,
                 itemBuilder: (context, index) {
                   return Padding(
-
                     padding: const EdgeInsets.all(10),
                     child: GestureDetector(
-                      onTap: () async {
-                        print(widget.empresas[index].empNome!);
+                      onTap: () {
+                        ParametrosGlobais.nomeEmpresa =
+                            widget.empresas[index].empNome!;
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return HomePage();
+                            },
+                          ),
+                        );
                       },
                       child: Container(
                         padding: EdgeInsets.all(16),
