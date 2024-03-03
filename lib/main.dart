@@ -15,8 +15,19 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         useMaterial3: true,
+        appBarTheme: const AppBarTheme(
+          color: Colors.deepPurpleAccent,
+          centerTitle: true,
+          titleTextStyle: TextStyle(
+            fontSize: 18,
+            color: Colors.white,
+          ),
+          iconTheme: IconThemeData(
+            color: Colors.white,
+          ),
+        ),
       ),
-      home: LoginPage()
+      home: const LoginPage(),
     );
   }
 }

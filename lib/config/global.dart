@@ -1,5 +1,6 @@
 class ParametrosGlobais {
-  static String baseUrlApi = 'http://192.168.100.30:9897/v1';
+  static String baseUrlApi = 'http://localhost:8080/v1';
   static String token = '';
   static String nomeEmpresa = '';
+  static int? codigoEmpresa;
 }

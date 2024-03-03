@@ -37,8 +37,8 @@ class _SelecionarEmpresasWidgetState extends State<SelecionarEmpresasWidget> {
                     padding: const EdgeInsets.all(10),
                     child: GestureDetector(
                       onTap: () {
-                        ParametrosGlobais.nomeEmpresa =
-                            widget.empresas[index].empNome!;
+                        ParametrosGlobais.nomeEmpresa = widget.empresas[index].empNome!;
+                        ParametrosGlobais.codigoEmpresa = widget.empresas[index].empId;
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) {
